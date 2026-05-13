@@ -23,7 +23,7 @@ import lombok.extern.log4j.Log4j2;
  */
 @Log4j2
 @Controller
-public class BookController {
+public class BookController{
 
     private final BookMstService bookMstService;// controllerはDBを操作しないルール
 

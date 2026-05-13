@@ -19,12 +19,12 @@ import jp.co.metateam.library.repository.BookMstRepository;
 public class BookMstService {
 
     private final BookMstRepository bookMstRepository;
-    
+
     @Autowired
-    public BookMstService(BookMstRepository bookMstRepository){
+    public BookMstService(BookMstRepository bookMstRepository) {
         this.bookMstRepository = bookMstRepository;
     }
-    
+
     public List<BookMstDto> findAvailableWithStockCount() {
         List<BookMst> books = this.bookMstRepository.findLimitedBook();
         List<BookMstDto> bookMstDtoList = new ArrayList<BookMstDto>();
@@ -42,27 +42,13 @@ public class BookMstService {
 
         return bookMstDtoList;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 500bcb01e0cc38529f9aff5069c43ebeb6f5a3b6
-    @Transactional//エラーのまま実行するのを防ぐ
-    public void save(BookMstDto dto) {//Controllerから受け取った画面データを、DB保存用の形に変換して保存している戻り値なし
-    BookMst book = new BookMst();
-            book.setIsbn(dto.getIsbn());
-            book.setTitle(dto.getTitle());//DTOからEntityに写す
-        
-    bookMstRepository.save(book);//データベースに保存
-}
-<<<<<<< HEAD
-=======
-        
-    
->>>>>>> 500bcb01e0cc38529f9aff5069c43ebeb6f5a3b6
+    @Transactional // エラーのまま実行するのを防ぐ
+    public void save(BookMstDto dto) {// Controllerから受け取った画面データを、DB保存用の形に変換して保存している戻り値なし
+        BookMst book = new BookMst();
+        book.setIsbn(dto.getIsbn());
+        book.setTitle(dto.getTitle());// DTOからEntityに写す
+
+        bookMstRepository.save(book);// データベースに保存
     }
-    
-    
-
-
-
-
+}
