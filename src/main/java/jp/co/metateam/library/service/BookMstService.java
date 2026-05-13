@@ -42,6 +42,7 @@ public class BookMstService {
 
         return bookMstDtoList;
     }
+
     @Transactional//エラーのまま実行するのを防ぐ
     public void save(BookMstDto dto) {//Controllerから受け取った画面データを、DB保存用の形に変換して保存している戻り値なし
     BookMst book = new BookMst();
@@ -50,8 +51,6 @@ public class BookMstService {
         
     bookMstRepository.save(book);//データベースに保存
 }
-        
-    
     }
     
     
