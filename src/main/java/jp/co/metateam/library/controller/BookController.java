@@ -50,7 +50,8 @@ public class BookController {
     }
 
     @PostMapping("/book/add") // 登録処理
-    public String add(BookMstDto bookMstDto) {//画面の入力データ受け取る
+    public String add(BookMstDto bookMstDto// 画面の入力データを受け取る
+    ) {
         this.bookMstService.save(bookMstDto);// DBに受け取ったデータの登録処理お願いする
         return "redirect:/book/index";// 書籍一覧に戻る
     }
